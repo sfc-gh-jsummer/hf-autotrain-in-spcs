@@ -200,7 +200,7 @@ python3 -m fastchat.serve.gradio_web_server --port 8000
 Return to Snowsight to obtain the URL for the `app` endpoint (located at port 8000). After using your Snowflake credentials, you will see the Gradio chat interface and evaluate responses. Below you will see a quick comparison of the base model's response with that of the fine-tuned model using a novel offer in the expected JSON structure. Example generations using the base model (llama-2-7b) were mixed oftentimes either getting stuck in a repetitive phrasing or committing verbose hallucations. In comparison, the fine-tuned model reports the desired structure.
 
 <figure>
-  <img src=images/comparative_generation.gif  alt="Base model vs. Fine-tuned model" height="50%" width="50%">
+  <img src=images/comparative_generation.gif  alt="Base model vs. Fine-tuned model">
   <figcaption><i>Prompting base and fine-tuned LLM to describe novel offer using expected JSON structure</i></figcaption>
 </figure>
 
