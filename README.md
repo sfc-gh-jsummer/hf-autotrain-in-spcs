@@ -159,7 +159,11 @@ CREATE SERVICE AUTOTRAIN
   FROM @SPEC_STAGE
   SPECIFICATION_FILE = autotrain.yaml
   MIN_INSTANCES = 1
-  MAX_INSTANCES = 1;
+  MAX_INSTANCES = 1
+  COMMENT = '{"origin": "sf_sit",
+             "name": "hf_autotrain",
+             "version": {"major": 1, "minor": 1},
+             "attributes":{"solution_family":"spcs"}}';
 ```
 
 Wait for the service status to confirm it is `RUNNING` with system function `GET_SERVICE_STATUS`. Once confirmed, visit the `jupyter` endpoint URL to monitor fine-tuning progress, which is written to `workspace/autotrain.err` in the container working directory. Fine-tuning will likely take some time and is dependent upon chosen model, compute pool, and data. The llama-7b model trained for 56 minutes using a dataset of 1,252 records. A final confirmation will be written to the container logs, accessible via system function `GET_SERVICE_LOGS`.
